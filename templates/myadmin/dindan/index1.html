@@ -1,0 +1,50 @@
+{% extends 'myadmin/base.html' %}
+{% block mainbody %}
+	
+	
+
+	<table class="table table-bordered table-striped">
+	<br>
+	<h1>订单详情浏览</h1>
+	<hr>
+		<thead>
+			<tr>
+				<th>
+					ID
+				</th>
+				<th>
+					订单ID号
+				</th>
+				<th>
+					商品ID号
+				</th>
+				<th>
+					商品名称
+				</th>
+				<th>
+					单价(元)
+				</th>
+				<th>
+					数量
+				</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			{% for ov in op %}
+			<tr>
+			
+				<td>{{ ov.id }}</td>
+				<td>{{ ov.orderid }}</td>
+				<td>{{ ov.goodsid }}</td>
+				<td>{{ ov.name }}</td>
+				<td>{{ ov.price }}</td>
+				<td>{{ ov.num }}</td>
+			
+			</tr>
+			{% endfor %}
+		</tbody>	
+	</table>
+	</tbody>				
+	
+{% endblock %}

@@ -1,0 +1,543 @@
+/*公共*/
+body{
+	min-height: 800px;
+	padding-top: 0;
+}
+.navbar{
+	border:none;
+}
+.app-main-form{
+	display:none;
+}
+/*主内容区域*/
+.content{
+	width: 100%;
+}
+.banner-box {
+	height: 750px;
+	width: 1240px;
+    	background: url(../img/banner-l.png) no-repeat 0 center;
+}
+.container-fluid{
+	background: #f8fcff;
+    	height: 750px;
+}
+.main-form {
+	width: 370px;
+	position: absolute;
+	top: 14%;
+	right: 220px;
+	background-color: #FFF;
+	padding: 72px 35px 20px;
+	border-radius: 2px;
+}
+.tab-title {
+	font-size: 18px;
+	/*margin-bottom: 30px;*/
+	text-align: center;
+}
+/*a链接*/
+a.activeBtn:hover{
+	border: 1px solid #32a5e7;
+	color: #40abe9;
+	background-color: white;
+}
+a.linkABlue:link, a.linkABlue:visited{
+	color: #00a7ea;
+}
+a.linkABlue:hover{
+	color: #008ec7;
+}
+a.invalidBtn:link, a.invalidBtn:visited{
+	color: #7f7f7f;
+	cursor: default;
+}
+a.invalidBtn:hover{
+	color: #7f7f7f;
+}
+a.linkAGray:link, a.linkAGray:visited{
+	color: #7f7f7f;
+}
+a.linkAGray:hover{
+	color: #2b2b2b;
+}
+a.fullBtnBlue:hover{
+	background-color:#2b8cc5;
+	color:#fff;
+}
+a.fullBtnBlue{
+	display: inline-block;
+	height: 50px;
+	width: 300px;
+	font-size: 20px;
+	line-height: 50px;
+	text-align: center;
+	margin-bottom: 20px;
+	*margin-bottom: 10px;
+	outline: none;
+	cursor:pointer;
+	background-color: #32a5e7;
+	color: #fff;
+	border-radius: 2px;
+}
+a.fullBtnGray{
+	display: inline-block;
+	width: 156px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 20px;
+	text-align: center;
+	outline: none;
+	cursor:pointer;
+	background-color: #d9d9d9;
+	color: #fff;
+}
+a.fullBtnGray:hover{
+	background-color:#c3c3c3;
+	color:#fff;
+}/*a链接 E*/
+
+.tip-box {
+	position:relative;
+	height:33px;
+	display:table;
+	width:100%;
+	margin-bottom:20px;
+	margin-top:26px;
+	border:solid 1px #ffc2b3;
+	background:#ffd1ca;
+	border-radius:2px;
+}
+.tip-box .close{
+	width: 100%;
+	height: 33px;
+	color: #333;
+	opacity:.6;
+}
+.tip-box .close i{
+	float: left;
+	margin: 6px 0 0 6px;
+}
+.tip-box .close .cha{
+	float: right;
+	margin: -28px 6px 0 0;
+}
+.tip-font {
+	color:#666;
+	font-size:12px;
+	padding-right:25px;
+	padding-left:35px;
+	display:table-cell;
+	vertical-align:middle;
+	height: 33px;
+	line-height: 33px;
+	text-align: center;
+}
+.err-ico {
+	width:16px;
+	height:16px;
+	display:inline-block;
+	position:absolute;
+	top:10px;
+	left:10px;
+}
+.close-ico {
+	background-repeat:no-repeat;
+	cursor:pointer;
+	width:16px;
+	height:16px;
+	display:inline-block;
+	position:absolute;
+	top:12px;
+	right:10px;
+}
+.btn-error {
+	border:1px solid red;
+}
+.btn-focus {
+	border:1px solid #32a5e7;
+}
+.visiblility-hidden {
+	visibility:hidden;
+}
+.hide {
+	display:none !important}
+a.btn-gray {
+	background:#dadada
+}
+.normalInput{
+	position: relative;
+	display: inline-block;
+	padding: 0px 10px;
+	width: 320px;
+	height: 50px;
+	line-height:50px;
+	font-size: 14px;
+	margin-bottom: 20px;
+	border: 1px solid #dadada;
+	outline: none;
+	color: #474747;
+	*float: left;
+	zoom: 1;
+	overflow: hidden;
+	*line-height: 50px;
+}
+.txt-box {
+	height:33px;
+	padding:5px 0px;
+	color:#666;
+	font-size:12px;
+}
+#phoneNum {
+	display:inline-block;
+	color:#00a7ea;
+}
+.isphone {
+	font-size:16px;
+	text-align:center;
+	font-weight:bold;
+	color:#000;
+}
+.hasRegister {
+	text-align:center;
+	margin-top:10px;
+	color:#909090;
+}
+/*form样式*/
+.main-form .normalInput,.main-form .register-btn {
+	width: auto;
+	font-size: 14px;
+	display: block;
+	height:46px;
+	line-height:46px
+}
+.show-cycode .cycode-selected {
+    border-right: 1px solid #ddd;
+    cursor: pointer;
+    display: inline-block;
+    width: 60px;
+}
+.show-cycode #cycode, .show-cycode #account, .show-cycode #phone {
+    padding: 0;
+}
+.cycode-box .clearfix::after {
+    clear: both;
+    content: " ";
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+.cycode-selectbox .cycode-selected {
+    display: none;
+}
+.show-cycode .cycode-selected {
+    border-right: 1px solid #ddd;
+    cursor: pointer;
+    display: inline-block;
+    width: 60px;
+}
+.cycode-selected .arrow-down {
+    display: inline-block;
+    height: 8px;
+    width: 14px;
+}
+.cycode-selectbox input {
+    font-size: 14px;
+    margin-bottom: 0;
+    vertical-align: middle;
+    border:none;
+}
+.cycode-selected .ipt-cycode {
+    color: grey;
+    cursor: pointer;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    width: 60%;
+}
+.cycode-box .ipt-phone, .show-cycode .ipt-account {
+    text-indent: 8px;
+    width: 74%;
+}
+.cycode-box .cycode-container {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #e8e8e8;
+    color: #000;
+    display: none;
+    height: 210px;
+    left: -1px;
+    line-height: 30px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    z-index: 500;
+}
+.country-code .head {
+    background: #f9f9f9 none repeat scroll 0 0;
+    padding-left: 10px;
+}
+.country-code li {
+    clear: both;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 0 10px;
+}
+.country-code li:hover {
+    background: #f2f2f2 none repeat scroll 0 0;
+}
+.country-code li span {
+    height: 30px;
+    overflow: hidden;
+}
+.country-code .record-code {
+    float: right;
+    max-width: 20%;
+}
+.country-code .record-country {
+    cursor: pointer;
+    float: left;
+    max-width: 74%;
+}
+.cycode-box + #err-tips-phone {
+    display: none;
+}
+.cycode-box.error + #err-tips-phone {
+    display: block;
+}
+#err-tips-phone {
+    margin-top: -10px;
+}
+.cycode-box span.inputTip {
+    display: none;
+}
+.rememberField{
+	margin-bottom: 30px;
+	height: 20px;
+	line-height: 20px;
+	margin-top: 10px;
+}
+.btn-error {
+    border: 1px solid red;
+}
+.btn-focus {
+    border: 1px solid #32a5e7;
+}
+/*登录*/
+#kapkey {
+    border: medium none;
+    font-size: 14px;
+    height: 46px;
+    line-height: 22px;
+    outline: medium none;
+    width: 160px;
+}
+.go2forgetpwd {
+	float:right;
+}
+/*手机号*/
+#password {
+    color: #474747;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 22px;
+    outline: medium none;
+    width: 100%;
+}
+.normalInput input {
+    font-size: 14px;
+    height: 46px;
+    line-height: 22px;
+    width: 94%;
+    border:none;
+    outline:none;
+}
+/*主内容区域*/
+
+
+
+/*底部*/
+#flymeFooter {
+    position: static;
+    border-color: transparent !important;
+}
+.footerWrap{
+	width: 100%;
+	height: 130px;
+	border-top: solid 1px #E5E6E7;
+	background-color: #fff;
+	color: black;
+}
+.footer-layer1{
+	height: 50px;
+	line-height: 50px;
+	/*overflow: hidden;*/
+}
+.footer-layer1 a:link{
+	color: black;
+}
+.service-label{
+	margin-right: 10px;
+}
+.service-num{
+	margin-right: 20px;
+}
+.service-onlineWrap{
+	float: left;
+	height: 50px;
+	margin-left: 10px;
+}
+#service-online{
+	display: inline-block;
+	*margin-top: 5px;
+	_margin-top: 16px;
+	height: 20px;
+	line-height: 18px;
+	width: 64px;
+	color: white;
+	background-color: #32a5e7;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	text-align: center;
+}
+.service-online:hover{
+	color: white;
+}
+.footer-language{
+	position: relative;
+	overflow: hidden;
+	/*_display: inline-block;
+	_width: 90px;*/
+	cursor: default;
+	background: url("../img/base.png") -80px -150px no-repeat;
+}
+.footer-outerLink a{
+	margin-left: 10px;
+	display: inline-block;
+	overflow: hidden;
+	width: 32px;
+	height: 32px;
+}
+
+.footer-innerLink, .footer-outerLink{
+	float: left;
+}
+.footer-service{
+	float: left;
+	margin-left: 36px;
+}
+.footer-innerLink{
+	_padding-top: 15px;
+}
+.footer-outerLink{
+	position: relative;
+	float: right;
+	padding-top: 9px;
+}
+
+
+.foot-line {
+	background-color: #888;
+	margin: 0px 5px;
+	width: 1px;
+	height: 10px;
+}
+.i_icon{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.footer-outerLink i{
+	background: url("../img/base.png") no-repeat;
+}
+.footer-sinaMblog i{
+	background-position: -218px -91px;
+}
+.footer-tencentMblog i{
+	background-position: -260px -91px;
+}
+.footer-weChat i{
+	background-position: -302px -91px;
+}
+.footer-qzone i{
+	background-position: -344px -91px;
+}
+
+
+.footer-outerLink a{
+	cursor: pointer;
+}
+
+.footer-sinaMblog:hover i{
+	background-position: -218px -137px;
+}
+.footer-tencentMblog:hover i{
+	background-position: -260px -137px;
+}
+.footer-weChat:hover i{
+	background-position: -302px -137px;
+}
+.footer-qzone:hover i{
+	background-position: -344px -137px;
+}
+.copyrightInner a, .copyrightInner span{font-size: 12px;}
+
+
+#globalName {
+	position: relative;
+	display: inline;
+}
+
+#globalName:hover .footer-language_menu {
+	display: block;
+}
+
+.footer-language_menu {
+	-moz-box-shadow: 0px 0px 10px #E1E4E8;
+	-webkit-box-shadow: 0px 0px 10px #E1E4E8;
+	box-shadow: 0px 0px 10px #E1E4E8;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	background-color: #FEFEFE;
+	position: absolute;
+	border: solid 1px #E1E4E8;
+	overflow: hidden;
+	left: -8px !important;
+	bottom: 16px;
+	display: none;
+	width: 77px;
+	/*height: 80px;*/
+}
+
+/*底部 E*/
+
+/*移动端样式*/
+@media (max-width: 768px){
+	.container-fluid{
+		background:#fff;
+	}
+	.app-main-form{
+		display:block;
+	}
+	.main-form {
+	    	width: 18.5rem;
+	    	margin: 5rem auto 0;
+	    	overflow: visible;
+	    	height: auto;
+     		right: 0; 
+    		background-color: #FFF;
+    		padding: 0 0.875rem 0.5rem;
+    		border-radius: 2px;
+	}
+	a.fullBtnBlue{
+		width:16.6rem;
+	}
+
+
+}

@@ -1,0 +1,94 @@
+@media (max-width: 768px){
+	body{
+		background: #fff;
+	}
+	.crumbs .breadcrumb > li + li::before{
+		content: "";
+	}
+	.crumbs .breadcrumb{
+		margin:0;
+		text-align:center;
+		line-height:3.7rem;
+		font-size:20px;
+		color:#000;	
+	}
+	.right-content{
+		width: 100%;
+	}
+	.index-main .information{
+		width: 100%;
+		padding:0;
+		border-right:1px solid #f3f3f3;
+
+	}
+	.index-main .information .pic{
+		padding-right: 1.5rem;
+		margin: 0.25rem;
+	}
+	.index-main .information img{
+		width: 5rem;
+		height: 5rem;
+		padding: 0.25rem;
+
+	}
+	.index-main .information .name{
+		min-width: 8.5rem;
+		max-width: 11.0rem;
+		padding-right: 1.5rem;
+	}
+	.index-main .information .name span:first-child{
+		margin: 0.5rem auto;
+	}
+	.index-main .information .info ul{
+		margin-top: 0.25rem;
+	}
+	.index-main .information .info ul li{
+		line-height: 1.6rem;
+	}
+	.index-main .information .info ul .emailText span{
+		padding-left: 0.75rem;
+	}
+	.index-main .information .info a{
+		margin: 0.25rem 0;
+	}
+	.index-main .backCouponNum{
+		width: 100%;
+		margin-top: 1rem;
+	}
+	.index-main .bottom{
+		margin-top: 1.0rem;
+	}
+	.index-main .bottom .orderState{
+		width: 100%;
+		padding:0;
+	}
+	.index-main .bottom .message{
+		width: 100%;
+		padding:0;
+		margin: 1rem 0;
+	}
+	.index-main .bottom .title{
+		width: 100%;
+		height: 1.9rem;
+	}
+	.index-main .bottom .orderState .content{
+		padding: 1.9rem 3.75rem;
+	}
+	.index-main .bottom .orderState .content .waitPay{
+		margin-bottom: 1.5rem;
+	}
+	.index-main .bottom .orderState .content .cercl{
+		width: 4.5rem;
+		height: 4.5rem;
+		border-radius: 50%;
+	}
+	.index-main .bottom .orderState .content .iconfont{
+		width: 4.5rem;
+		height: 4.5rem;
+		line-height: 4.15rem;
+	}
+	.index-main .bottom .orderState .content .text{
+		line-height: 1.5rem;
+		margin:0.75rem 0 0 1.75rem;
+	}
+}

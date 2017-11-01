@@ -1,0 +1,33 @@
+{% extends "myadmin/base.html" %}
+
+{% block mainbody %} 
+	
+	
+    <h3>
+       商品类别
+    </h3>
+    <form id="edit-profile" action="{% url 'myadmin_typesinsert' %}" class="form-horizontal" method="post">
+        <input type="hidden" name='pid' value="{{pid}}">
+        <input type="hidden" name= 'path' value="{{path}}">
+        {% csrf_token %}
+        <fieldset>
+            <legend>添加商品类别信息</legend>
+            <div class="control-group">
+                <label class="control-label" for="input01">父类别名称：</label>
+                <div class="controls">
+                    <input disabled type="text" name="pname" class="input-xlarge disabled" id="input01" placeholder="{{name}}"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">子类别名称：</label>
+                <div class="controls">
+                    <input type="text" name="name" class="input-xlarge" id="input01" />
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">添加</button> <button type="reset" class="btn">重置</button>
+            </div>
+        </fieldset>
+        
+    </form>
+{% endblock %}

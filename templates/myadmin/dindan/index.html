@@ -1,0 +1,74 @@
+{% extends 'myadmin/base.html' %}
+{% block mainbody %}
+	<h1>
+		订单表浏览
+	</h1>
+	<hr>
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th>
+					订单ID号
+				</th>
+				<th>
+					会员ID号
+				</th>
+				<th>
+					联系人
+				</th>
+				<th>
+					地址
+				</th>
+				<th>
+					邮编
+				</th>
+				<th>
+					电话
+				</th>
+				<th>
+					购买时间
+				</th>
+				<th>
+					总金额(元)
+				</th>
+				<th>
+					状态
+				</th>
+				<th>
+					订单详情
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for vo in orderslist %}
+			<tr>
+				<td>{{ vo.id }}</td>
+				<td>{{ vo.uid }}</td>
+				<td>{{ vo.linkman }}</td>
+				<td>{{ vo.address }}</td>
+				<td>{{ vo.code }}</td>
+				<td>{{ vo.phone }}</td>
+				<td>{{ vo.addtime }}</td>
+				<td>{{ vo.total }}</td>
+				<td>
+					{% if vo.status == 0 %}
+						新订单
+					{% elif vo.status == 1 %}
+						已发货
+					{% elif vo.status == 2 %}
+						已收货
+					{% else %}
+						无效订单
+					{% endif %}
+				</td>
+				
+				<td>
+					
+					<a href="{% url 'myadmin_xiangqin' vo.id %}" class="view-link">查看详情</a>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>				
+	
+{% endblock %}

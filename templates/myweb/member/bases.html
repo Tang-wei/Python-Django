@@ -1,0 +1,104 @@
+{%  load static from staticfiles  %}
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  	<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  	<title> Flyme 账号 - 登录</title>
+   <meta name="description" content="欢迎登录和注册 Flyme 账号，您可以体验手机云服务功能，包括：在线下载应用，同步手机数据和查找手机等，让您的手机管理更加智能。" />
+  <meta name="keywords" content="魅族  meizu 登录flyme 云服务  查找手机  充值账号  MX M9 MX2" />    <link href="{% static 'myweb/img/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+    <link href="{% static 'myweb/img/favicon.ico' %}" rel="icon" type="image/x-icon">
+    <!-- Bootstrap -->
+  	<link href="{% static 'myweb/css/bootstrap.min.css' %}" rel="stylesheet">
+  	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  	<script src="{% static 'myweb/js/jquery-1.12.4.min.js' %}"></script>
+  	<!-- Include all compiled plugins (below), or include individual files as needed -->
+  	<script src="{% static 'myweb/js/bootstrap.min.js' %}"></script>
+  	<!-- 兼任ie9以下 -->
+  	<!--[if lt IE 9]>
+      		<script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+      		<script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+  	<![endif]-->
+    <!-- 自定义 -->
+    <link rel="stylesheet" type="text/css" href="{% static 'myweb/css/global.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'myweb/css/register.css' %}">
+    <script type="text/javascript" src="{% static 'myweb/js/rem.js' %}"></script>
+    <script type="text/javascript" src="{% static 'myweb/js/topNav.js' %}"></script>
+
+</head>
+<body>
+  <!-- 导航 --> 
+  <div class="layout-header hidden-xs hidden-sm" id="scroll-wrap">
+    <nav class="navbar navbar-default header ">
+      <div class="container clearfix">
+          <div class="layout-header-logo navbar-left">
+              <a target="_blank" href="./index.html" class="layout-header-logo-link" alt="魅族科技">
+                <img src="{% static 'myweb/img/logo.png' %}">
+              </a>
+          </div>      
+      </div>
+    </nav>
+  </div><!-- 导航 E--> 
+
+  <!-- 主内容区域 -->
+  {% block mainbody %}
+
+  {% endblock %}
+
+  
+  <!-- 主内容区域  E-->
+
+  <!-- 底部区域 -->
+  <div id="flymeFooter " class="footerWrap hidden-xs hidden-sm">
+    <div class="container">
+      <div class="footer-layer1">
+        <div class="footer-innerLink">
+          <a href="#" target="_blank" title="关于魅族">关于魅族</a>
+          <img class="foot-line" src="{% static 'myweb/img/space.gif">
+          <a href="#" target="_blank" title="工作机会">工作机会</a>
+          <img class="foot-line" src="{% static 'myweb/img/space.gif">
+          <a href="#" target="_blank" title="联系我们">联系我们</a>
+          <img class="foot-line" src="{% static 'myweb/img/space.gif">
+          <a href="#" target="_blank" title="法律声明">法律声明</a>
+          <img class="foot-line" src="{% static 'myweb/img/space.gif">
+          
+          <div href="javascript:void(0);" id="globalName" class="footer-language" title="简体中文">
+            简体中文&nbsp;&nbsp;&nbsp;
+            <div id="globalContainer" class="footer-language_menu">
+              <a href="#" id="i18n-link" title="English" class="ClobalItem">English</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-service">
+          <span class="service-label">客服热线</span>
+          <span class="service-num">400-788-3333</span>
+          <a id="service-online" class="service-online" href="javascript:void(0);" title="在线客服">在线客服</a>
+        </div>
+        <div class="footer-outerLink">
+          <a class="footer-sinaMblog" href="#" target="_blank"><i class="i_icon"></i></a>
+          
+          <a id="footer-weChat" class="footer-weChat" href="javascript:void(0);" target="_blank"><i class="i_icon"></i></a>
+          <a class="footer-qzone" href="#" target="_blank"><i class="i_icon"></i></a>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <div id="flymeCopyright" class="copyrightWrap">
+        <div class="copyrightInner">
+          <span>&copy;2017 Meizu Telecom Equipment Co., Ltd. All rights reserved.</span>
+          <a href="#" class="linkAGray" target="_blank">备案号: 粤ICP备13003602号-4</a>
+          <a href="#" class="linkAGray" target="_blank">经营许可证编号: 粤B2-20130198</a>
+          <a target="_blank" href="#" class="linkAGray">营业执照</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 底部区域 E -->
+  
+<script type="text/javascript">
+  //
+  nLogin();
+</script>
+</body>
+</html>

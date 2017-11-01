@@ -1,0 +1,67 @@
+{% extends "myadmin/base.html" %}
+
+{% block mainbody %}                
+    <h3>
+        会员信息管理
+    </h3>
+    <form id="edit-profile" action="{% url 'myadmin_usersupdate' user.id %}" class="form-horizontal" method="post">
+        {% csrf_token %}
+        <fieldset>
+            <legend>编辑会员信息</legend>
+            <div class="control-group">
+                <label class="control-label" for="input01">账号：</label>
+                <div class="controls">
+                    {{ user.username }}
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">真实姓名：</label>
+                <div class="controls">
+                    <input type="text" name="name" class="input-xlarge" id="input01" value="{{ user.name }}" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">性别：</label>
+                <div class="controls">
+                    <input type="radio" name="sex" class="input-xlarge" id="input01" value="1" /> 男
+                    <input type="radio" name="sex" class="input-xlarge" id="input01" value="0" /> 女
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">地址：</label>
+                <div class="controls">
+                    <input type="text" name="address" class="input-xlarge" id="input01" value="{{ user.address }}" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">邮编：</label>
+                <div class="controls">
+                    <input type="text" name="code" class="input-xlarge" id="input01" value="{{ user.code }}" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">电话：</label>
+                <div class="controls">
+                    <input type="text" name="phone" class="input-xlarge" id="input01" value="{{ user.phone }}" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">email邮箱：</label>
+                <div class="controls">
+                    <input type="text" name="email" class="input-xlarge" id="input01" value="{{ user.email }}" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">状态：</label>
+                <div class="controls">
+                    <input type="radio" name="state" class="input-xlarge" id="input01" value="0" /> 管理员 
+                    <input type="radio" name="state" class="input-xlarge" id="input01" value="1" /> 启用会员
+                    <input type="radio" name="state" class="input-xlarge" id="input01" value="2" /> 禁用用户
+                </div>
+            </div>                        
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">保存</button> <button type="reset" class="btn">重置</button>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}

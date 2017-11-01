@@ -1,0 +1,89 @@
+{% extends 'myadmin/base.html' %}
+{% block mainbody %}
+	<h1>
+		商品信息浏览
+	</h1>
+	<hr>
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th>
+					商品ID
+				</th>
+				<th>
+					商品类别
+				</th>
+				<th>
+					商品名称
+				</th>
+				<th>
+					图片
+				</th>
+				<th>
+					单价
+				</th>
+				<th>
+					库存量
+				</th>
+				<th>
+					点击次数
+				</th>
+				<th>
+					状态
+				</th>
+				<th>
+					操作
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for vo in goodslist %}
+			<tr>
+				<td>{{ vo.id }}</td>
+				<td>{{ vo.typename }}</td>
+				<td>{{ vo.goods }}</td>
+				<td><img src="/static/goods/s_{{vo.picname}}" width="60" /></td>
+				<td>{{ vo.price }}</td>
+				<td>{{ vo.store }}</td>
+				<td>{{ vo.clicknum }}</td>
+				<td>
+					{% if vo.state == 1 %}
+						新添加
+					{% elif vo.state == 2 %}
+						在售
+					{% else %}
+						下架
+					{% endif %}
+				</td>
+				
+				<td>
+					<a href="{% url 'myadmin_goodsdel' vo.id %}" class="view-link">删除</a>
+                    <a href="{% url 'myadmin_goodsedit' vo.id %}" class="view-link">编辑</a>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>				
+	<div class="pagination">
+		<ul>
+			<li class="disabled">
+				<a href="#">&laquo;</a>
+			</li>
+			<li class="active">
+				<a href="#">1</a>
+			</li>
+			<li>
+				<a href="#">2</a>
+			</li>
+			<li>
+				<a href="#">3</a>
+			</li>
+			<li>
+				<a href="#">4</a>
+			</li>
+			<li>
+				<a href="#">&raquo;</a>
+			</li>
+		</ul>
+	</div>
+{% endblock %}

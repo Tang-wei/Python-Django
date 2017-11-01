@@ -1,0 +1,696 @@
+{% extends 'myweb/base.html' %}
+{% load static from staticfiles %}
+{% block mainbody %}
+
+
+<!-- 自定义 -->
+
+    {% block mylink %}
+    <link rel="stylesheet" type="text/css" href="{% static 'myweb/css/global.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'myweb/css/detail.css' %}">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'myweb/css/app.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'myweb/css/detail-app.css' %}">
+    
+    <script type="text/javascript" src="{% static 'myweb/js/rem.js' %}"></script>
+    <script type="text/javascript" src="{% static 'myweb/js/topNav.js' %}"></script>
+    {% endblock %}
+
+
+    <!-- 移动端结构 -->
+    <div class="scroll-view">
+      <header class="header orient-h fixed-top">
+        <a class="header-back" href="./list.html">
+          <i class="glyphicon glyphicon-menu-left" aria-hidden="true"></i>
+        </a>
+        <div class="title">手机</div>
+        <div class="qtool">
+            <a id="btn-search"><i class="glyphicon glyphicon-search"></i></a>
+        </div>
+      </header>
+    </div><!-- 移动端结构 E-->
+  </div><!-- 导航 E--> 
+
+  <!-- 主内容区域 -->
+  <div class="page-detail">
+    <div class="container">
+      <!-- 面包屑 导航 -->
+      <div class="ml-nav hidden-xs hidden-sm">
+        <ol class="breadcrumb">
+          <li><a href="./index.html">首页</a></li>
+          <li><a href="#"> 魅蓝 X</a></li>
+        </ol>
+      </div>
+     <!-- 面包屑 导航 E-->
+    <!-- 产品购买 -->
+    <div class="row">
+      <div class="col-md-5 col-sm-12 col-xs-12">
+        <div class="preview">
+          <!-- Tab panes -->
+          <div class="tab-content preview-booth pt10">
+            <div role="tabpanel" class="tab-pane active mod-pic" id="list-p1">
+              <img  src="/static/goods/{{ goods.picname }}" width="375" height="375"  class="sImg">
+            </div>
+            
+          </div>
+
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs preview-thumb clearfix " role="tablist">
+            <li role="presentation" class="active">
+              <a href="#list-p1" aria-controls="list-p1" role="tab" data-toggle="tab">
+                <img  src="/static/goods/m_{{ goods.picname }}" style="display: inline;" width="75" height="75">
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+      <div class="col-md-7 col-sm-12 col-xs-12 pt10">
+
+        <div class="property hidden-xs hidden-sm" id="property">
+          
+             <div class="property-hd">
+                   <h1>{{ goods.goods }}</h1>
+                   <p class="mod-info active">{{ goods.descr }} </p>
+             </div>
+             <div class="property-sell">
+                 <dl class="property-sell-price clearfix">
+                     <dt class="vm-metatit" id="J_discountTag">价<span class="s-space"></span><span class="s-space"></span>格：
+                     </dt>
+                     <dd>
+                         <div class="mod-price">
+                             <small>¥</small>
+                             <span id="J_price" class="vm-money">{{ goods.price }}</span>
+                         </div>
+                         <div class="mod-original" id="J_originalPrice" style="display:none;"></div>
+                         <div class="mod-activity">
+                         </div>
+                         <div class="mod-countdown" id="J_discountCountDown" style="display:none;">
+                         </div>
+                     </dd>
+                 </dl>
+                 <dl class="property-sell-coupon clearfix" id="J_prodPromo" style="">
+                     <dt class="vm-metatit">领<span class="s-space"></span><span class="s-space"></span>券：
+                     </dt>
+                     <dd>
+                         <p id="J_promoInner">
+                         <span class="vm-tag multiple"><em>满699减10.00</em></span></p>
+                         <a class="vm-more" data-mtype="store_de_coupon_more" id="J_promoMore" href="#">更多&gt;</a>
+                     </dd>
+                 </dl>
+             </div>
+          <div class="property-sibling">
+            <dl data-property="型号" class="property-sibling-item">
+              <dt class="vm-metatit">
+                     型<span class="s-space"></span><span class="s-space"></span>号：
+              </dt>
+              <dd class="clearfix">
+                <a href="#" data-itemid="10478" class="prop" data-mtype="store_de_sib_1">魅蓝 Max</a>
+                <a href="javascript:;" data-itemid="10636" class="prop selected" data-mtype="store_de_sib_2">魅蓝 X</a>
+              </dd>
+            </dl>
+          </div>
+          <div class="property-set">
+            <dl class="property-set-sale" data-property="网络类型">
+              <dt class="vm-metatit">网络类型：</dt>
+              <dd class="clearfix">
+                <a data-value="14:18238" data-mtype="store_de_sp_1_1" href="#" title="全网通公开版" class="selected">
+                  <span>全网通公开版</span>
+                </a>
+              </dd>
+            </dl>
+            <dl class="property-set-sale" data-property="颜色分类">
+              <dt class="vm-metatit">颜色分类：</dt>
+              <dd class="clearfix">
+                <a data-value="3:22218" class="vm-sale-img selected" data-mtype="store_de_sp_2_1" href="#" title="流光金">
+                  <img src="{% static 'myweb/img/vm4.png' %}" width="32" height="32">
+                  <span>流光金</span>
+                </a>
+                <a data-value="3:22219" class="vm-sale-img" data-mtype="store_de_sp_2_2" href="#" title="珠光白">
+                  <img src="{% static 'myweb/img/vm5.png' %}" width="32" height="32">
+                  <span>珠光白</span>
+                </a>
+            </dd>
+            </dl>
+            <dl class="property-set-sale" data-property="内存容量">
+                <dt class="vm-metatit">内存容量：</dt>
+                <dd class="clearfix">
+                    <a data-value="13:37" data-mtype="store_de_sp_3_1" href="#" title="32GB" class="selected">
+                      <span>32GB</span>
+                    </a>
+                </dd>
+            </dl>
+          </div>
+          <div class="property-service">
+            <dl class="property-service-item clearfix">
+                <dt class="vm-metatit">支<span class="s-space"></span><span class="s-space"></span>持：
+                </dt>
+                <dd class="mod-bd" id="J_prodService">
+                  <span><i class="glyphicon glyphicon-ok-circle" aria-hidden="true"></i>花呗分期</span>
+                  <span><a href="#" target="_blank"><i class="glyphicon glyphicon-ok-circle" aria-hidden="true"></i>百城速达</a></span>
+                  <span><i class="glyphicon glyphicon-ok-circle" aria-hidden="true"></i>顺丰包邮</span>
+                  <span><i class="glyphicon glyphicon-ok-circle" aria-hidden="true"></i>7天无理由退货</span>
+               </dd>
+            </dl>
+            <dl class="property-service-suda clearfix" id="J_delivery">
+              <dt class="vm-metatit">配送<span class="s-space"></span>至：</dt>
+              <dd class="mod-site clearfix">
+                <div id="site-selector" class="site-selector">
+                  <div class="text">广东 广州市 【请选择】</div>
+                </div>
+              </dd>
+            </dl>
+            <dl class="property-service-provider clearfix">
+              <dt class="vm-metatit">服<span class="s-space"></span><span class="s-space"></span>务：
+              </dt>
+              <dd class="clearfix">
+                 <span id="J_installmentInfo"></span>
+                     本商品由 魅族 负责发货并提供售后服务
+              </dd>
+            </dl>
+          </div>
+          <div class="property-huabei clearfix">
+            <div class="vm-metatit">花呗分期：</div>
+            <div class="clearfix property-huabei-bd" id="J_huabeiBody">
+              <a data-value="3" class="prop" data-mtype="store_de_hb_3">
+                  <span class="vm-periods">¥499.67×3期</span>
+                  <span class="vm-rate">免手续费</span>
+              </a>
+              <a data-value="6" class="prop" data-mtype="store_de_hb_6">
+                  <span class="vm-periods">¥261.08×6期</span>
+                     <span class="vm-rate">含手续费11.24/期</span>
+              </a>
+              <a data-value="12" class="prop" data-mtype="store_de_hb_12">
+                  <span class="vm-periods">¥134.29×12期</span>
+                     <span class="vm-rate">含手续费9.37/期</span>
+              </a>
+            </div>
+            <a href="//hd.meizu.com/rules/huabei.html" target="_blank" class="vm-desc">
+               <i class="iconfont-detail icon-question"></i>
+               什么是花呗分期
+            </a>
+          </div>
+        <form id="mainForm" class="main-form"  action="{% url 'gshopadd' goods.id %}" method="post">
+        {% csrf_token %}
+          <div class="property-buy">
+            <p class="vm-message" id="J_message"></p>
+            <dl class="property-buy-quantity">
+                <dt class="vm-metatit">数<span class="s-space"></span><span class="s-space"></span>量：</dt>
+                <dd class="clearfix">
+                    <div class="mod-control">
+                       <a title="减少" href="javascript:;" class="vm-minus disabled">-</a>
+                       <input value="1" name="m" id="J_quantity" data-max="5" type="text">
+                       <a title="增加" href="javascript:document.getElementById('J_quantity').value++;" class="vm-plus">+</a>
+                    </div>
+                </dd>
+            </dl>
+            <div class="property-buy-action">
+                <!-- <a data-mtype="store_de_buy" href="javascript:void(0);" id="J_btnBuy" class="btn btn-danger btn-lg mr20">立即购买</a> -->
+                <button type="submit" class="btn btn-primary btn btn-danger btn-lg mr20" >加入购物车</button>
+                <a data-mtype="store_de_cart" href="javascript:void(0);" id="J_btnAddCart" class="btn btn-primary btn-lg hide" style="display:inline-block;"><i></i>加入购物车</a>
+                <span class="vm-service" id="J_panicBuyingWrap"></span>
+            </div>
+          </div>
+          <div class="prod-addition">
+                <input id="servertime" value="1503304001935" type="hidden">
+
+                <div class="layer-promo" id="layerPromo" style="display:none;">
+                    <div class="layer-promo-hd">
+                       领取优惠券
+                        <a class="vm-close" id="J_promoClose" href="#">
+                           ╳
+                        </a>
+                    </div>
+                    <div class="layer-promo-bd">
+                      <dl class="discount-coupon" id="J_discountCoupon">
+                        <dd class="discount-coupon-item clearfix multiple">
+                          <div class="mod-btn">
+                            <a class="vm-btn" data-key="658000850">立即领取</a>
+                          </div>
+                          <div class="mod-bd clearfix">
+                            <p class="mod-bd-value">
+                              <span class="vm-amount"><sup>¥</sup>10.00</span>
+                              <em>(多品券)</em>
+                            </p>
+                            <p class="mod-bd-name">
+                              <span class="vm-name">818专享优惠券</span>
+                              <span class="vm-claim">满699可用</span>
+                            </p>
+                            <p class="mod-bd-info">
+                              <span>2017.08.01 11:40 - 2017.08.22 00:00</span>
+                              <span class="vm-range ellipsis">适用范围：魅族-魅蓝E、魅族-魅蓝MAX、魅族-魅蓝5礼盒版、魅族-魅蓝 X、魅族-魅蓝 note5</span>
+                              <a class="vm-more" target="_blank" href="//lists.meizu.com/page/couponItems/850.html">查看适用&gt;
+                              </a>
+                            </p>
+                          </div>
+                        </dd>
+                      </dl>
+                    </div>
+                </div>
+              
+          </div>
+        </from>
+        </div>   
+        <div id="prod" class="prod">
+          <!-- <div class="prod-info">
+            <div class="prod-info-header">
+                <h1 class="vm-title">魅蓝 X</h1>
+            </div>
+            <div class="prod-info-price">
+                <div class="mod-price">
+                    <small>¥ </small><span id="J_price" class="vm-money">1499.00</span>
+                </div>
+                <div class="mod-original" id="J_originalPrice" style="display:none">
+                </div>
+                <div class="mod-countdown" id="J_discountCountDown" style="display:none">
+                </div>
+            </div>
+            <div class="prod-info-installment" id="J_prodInstallment" style="display: block;">
+                分期价 ￥<span class="vm-price">134.29</span>x<span class="vm-period">12</span>期<span class="vm-rate"></span>
+            </div>
+            <div class="prod-info-message">
+                <p class="active">32G直降200元 原价1699元 高清屏安全快充 </p>
+            </div>
+          </div>
+          <div class="prod-service" id="J_prodService">
+            <ul>
+              <li><i class="glyphicon glyphicon-ok-circle"></i>花呗分期</li>
+              <li><i class="glyphicon glyphicon-ok-circl"></i>百城速达</li>
+              <li><i class="glyphicon glyphicon-ok-circle"></i>顺丰包邮</li>
+              <li><i class="glyphicon glyphicon-ok-circle"></i>7天无理由退货</li>
+            </ul>
+            <i class="glyphicon glyphicon-menu-right icon-enter" id="J_prodPromoEnter"></i>
+          </div>
+          <div class="prod-selected" id="J_prodSelected">
+            <label>已选</label>
+            <p>
+                <span class="vm-props s-selected" id="J_selectedProps">全网通公开版,流光金,32GB</span>
+                <span class="vm-quantity" id="J_selectedQuantity" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">×1</span>
+            </p>
+            <i class="glyphicon glyphicon-menu-right icon-enter" id="J_prodPromoEnter"></i>
+          </div>
+          <div class="prod-suda" id="J_prodSuda">
+            <div class="prod-suda-selector" id="J_sudaSelector">
+                <label>送至</label>
+                <span id="J_siteText" class="">广东 广州市</span>
+                <i class="glyphicon glyphicon-menu-right icon-enter" id="J_prodPromoEnter"></i>
+            </div>
+            <div class="prod-suda-info" style="display:none;">
+              <p class="mod-bd">
+                <span id="J_siteStatus"></span>
+                <span id="J_installmentInfo"></span>
+              </p>
+            </div>
+            <div class="prod-suda-supplier">
+              <p class="mod-bd">
+                本商品由<em>魅族</em>负责发货并提供售后服务
+              </p>
+            </div>
+          </div> -->
+        </div>
+      </div>
+  </div>
+    <!-- 产品购买 -->
+    </div>
+    <!-- 漂浮的导航 -->
+    <div class="detail-tab anim detail-fast-float" id="detailFast">
+        <div class="fixed-container">
+            <ul class="clearfix">
+                <li class="">
+                    <a href="javascript:void(0);">商品详情</a>
+                </li>
+                <li class="">
+                    <a href="javascript:void(0);">规格参数</a>
+                </li>
+                    <li class="current">
+                        <a href="javascript:void(0);">常见问题</a>
+                    </li>
+            </ul>
+            <div class="shortcut trans">
+                <div class="shortcut-con trans">
+                    <div class="mod-buy">
+                        <a data-mtype="store_de_buynow" href="javascript:void(0);" id="J_btnBuyShortcut" class="btn btn-primary btn-lg"><i></i>现在购买</a>
+                    </div>
+                    <div class="mod-total trans">
+                    魅蓝 X<em class="vm-price" id="J_totalPriceShortcut">￥2998.00</em>
+                        <p class="vm-title" id="J_summaryName">全网通公开版 珠光白 32GB</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mod-title">
+
+            </div>
+        </div>
+    </div><!-- 漂浮的导航 E-->
+    <!-- 产品详情 -->
+    <div class="row detail" id="detail">
+      <div class="detail" style="height:62px;">
+        <div class="detail-tab" id="detailTabFixed">
+          <div class="fixed-container">
+            <ul class="clearfix" style="display: block;">
+                <li class="current">
+                    <a data-mtype="store_de_xq_1" href="javascript:void(0);">商品详情</a>
+                </li>
+                <li class="">
+                    <a data-mtype="store_de_xq_2" href="javascript:void(0);">规格参数</a>
+                </li>
+                <li class="">
+                    <a data-mtype="store_de_xq_3" href="javascript:void(0);">常见问题</a>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </div> 
+      <div class="detail-content container">
+          <div class="introduce current" id="introduce">
+              <img src="{% static 'myweb/img/mlx7.jpg' %}" class="pc-detial-intr">
+              <img src="{% static 'myweb/img/mlx8.jpg' %}"  class="pc-detial-intr">
+              <img src="{% static 'myweb/img/mlx9.jpg' %}" class="pc-detial-intr">
+              <img src="{% static 'myweb/img/mlx10.jpg' %}" class="pc-detial-intr">
+              <img src="{% static 'myweb/img/mlx11.jpg' %}" class="pc-detial-intr">
+              <img src="{% static 'myweb/img/mlx12.jpg' %}" class="pc-detial-intr">
+              <img src="{% static 'myweb/img/mlx13.jpg' %}" class="pc-detial-intr">
+              <img src="{% static 'myweb/img/mlx14.jpg' %}" class="pc-detial-intr">
+              <!-- <img src="{% static 'myweb/img/app/m5.jpg' %}" class="app-detial-intr">
+              <img src="{% static 'myweb/img/app/m8.jpg' %}" class="app-detial-intr">
+              <img src="{% static 'myweb/img/app/m9.jpg' %}" class="app-detial-intr">
+              <img src="{% static 'myweb/img/app/m6.jpg' %}" class="app-detial-intr"> -->
+          </div>
+          <!-- 移动端图片 -->
+
+          <div class="standard" id="standard">
+              <table class="standard-table">
+                  <tbody>
+                      <tr class="standard-table-group">
+                          <th colspan="2">
+                              基础信息
+                          </th>
+                      </tr>
+                      <tr> 
+                          <th> 品牌 </th> 
+                          <td> 魅族 </td> 
+                      </tr> 
+                      <tr> 
+                          <th> 型号 </th> 
+                          <td> 魅蓝 X </td> 
+                      </tr> 
+                      <tr> 
+                          <th> 尺寸 </th> 
+                          <td> 153.8*76*7.4mm </td> 
+                      </tr> 
+                      <tr> 
+                          <th> 电池容量 </th> 
+                          <td> 3200mAh </td> 
+                      </tr> 
+                      <tr> 
+                          <th> 重量 </th>
+                          <td> 165g </td> 
+                      </tr> 
+                      <tr class="standard-table-group"> <th colspan="2"> 屏幕 </th> 
+                      </tr> <tr> <th> 屏幕尺寸 </th> <td> 5.5英寸 </td> </tr> 
+                      <tr> <th> 对比度 </th> <td> 1500:1 </td> </tr> <tr> 
+                      <th> 分辨率 </th> <td> 1920×1080 </td> </tr> <tr> 
+                      <th> PPI </th> <td> 403 </td> </tr> <tr> 
+                      <th> 亮度 </th> <td> 450cd/m²（典型值） </td> </tr> 
+                      <tr> <th> 显示技术 </th> <td> TDDI </td> </tr> 
+                      <tr> <th> 制造工艺 </th> <td> Full Incell </td> </tr>
+                       <tr class="standard-table-group"> <th colspan="2"> 容量 </th> 
+                       </tr> 
+                       <tr> 
+                          <th> 运行内存（RAM） </th> 
+                          <td> 3GB(仅限32G版本)、4GB(仅限64G版本) </td> 
+                      </tr> 
+                      <tr>    
+                          <th> 机身内存 </th> 
+                          <td> 32GB<br>64GB </td> 
+                      </tr>
+                      <tr class="standard-table-group"> 
+                          <th colspan="2"> 处理器 </th> 
+                      </tr>
+                      <tr> 
+                          <th> CPU </th> 
+                          <td> Helio P20 处理器 </td>
+                      </tr>
+                      <tr> 
+                          <th> GPU </th> 
+                          <td> ARM Mali-T880 图形处理器 </td> 
+                      </tr> 
+                      <tr> 
+                          <th> CPU频率 </th> 
+                          <td> ARM&reg;Cortex&reg;-A53&trade;2.3GHz x4 +<br>ARM&reg;Cortex&reg;-A53&trade;1.6 GHz x 4 </td> 
+                      </tr> 
+                      <tr class="standard-table-group"> 
+                          <th colspan="2"> 摄像 </th> 
+                      </tr> 
+                      <tr> 
+                          <th> 前置摄像头 </th> 
+                          <td> ƒ/2.0 光圈<br>5 片式镜头<br>ArcSoft&reg;美颜算法 自适应美肤技术<br>Face AE 脸部亮度智能调节<br>500万像素 </td> 
+                      </tr> 
+                      <tr> 
+                          <th> 后置摄像头 </th>
+                          <td> 1200万像素<br>6 片式镜头<br>PDAF 相位对焦 急速抓拍<br>ƒ/2.0 大光圈虚化<br>连拍模式<br>全景模式<br>双色温双闪光灯 补光自然柔和 </td> 
+                      </tr> 
+                      <tr class="standard-table-group"> 
+                          <th colspan="2"> mTouch </th>
+                      </tr> 
+                      <tr> 
+                          <th> 响应速度 </th> 
+                          <td> 0.2s </td> 
+                      </tr> 
+                      <tr> 
+                          <th> 识别角度 </th> 
+                          <td> 360° </td> 
+                      </tr> 
+                      <tr> 
+                          <th> 指纹组数 </th> 
+                          <td> 5组 </td> 
+                      </tr> 
+                      <tr> 
+                          <th> mTouch版本 </th> 
+                          <td> 2.1 </td> 
+                      </tr> 
+                      <tr> 
+                          <th> mTouch传感器 </th> 
+                          <td> 电容式触摸传感器 </td> 
+                      </tr> 
+                      <tr class="standard-table-group">   
+                          <th colspan="2"> 运营商与制式 </th> 
+                      </tr> 
+                      <tr> 
+                          <th> 全网通 </th> 
+                          <td> 全网通（公开版、电信版）<br>移动 4G TD-LTE<br>联通/电信 4G TD/FDD-LTE<br>移动 3G TD-SCDMA<br>联通 3G WCDMA<br>电信 3G EVDO<br>移动/联通 2G GSM<br>电信 2G CDMA </td> 
+                      </tr> 
+                      <tr class="standard-table-group"> 
+                          <th colspan="2"> 其他参数 </th> 
+                      </tr> 
+                      <tr> 
+                          <th> WLAN功能 </th> 
+                          <td> 支持 5GHz 和 2.4GHz 频段<br>802.11 a/b/g/n 无线网络 </td> 
+                      </tr> 
+                      <tr> 
+                          <th> 蓝牙 </th> 
+                          <td> Bluetooth 4.1 </td> 
+                      </tr> 
+                      <tr class="standard-table-group"> 
+                          <th colspan="2"> 多媒体 </th> 
+                      </tr> 
+                      <tr> 
+                          <th> 视频 </th> 
+                          <td> 支持 MP4、3GP、MOV、MKV、AVI、FLV、MPEG 视频格式 </td> 
+                      </tr> 
+                      <tr> 
+                          <th> 音频 </th> 
+                          <td> 支持 FLAC、APE、AAC、MKA、OGG、MIDI、M4A、AMR 音频格式 </td>
+                      </tr> 
+                      <tr> 
+                          <th> 图片 </th> 
+                          <td> 支持 JPEG、png' %}、GIF、BMP 图片格式 </td> 
+                      </tr> 
+                      <tr class="standard-table-group"> 
+                          <th colspan="2"> 系统与应用 </th> 
+                      </tr> 
+                      <tr> 
+                          <th> 系统版本 </th> 
+                          <td> Flyme 5 </td> 
+                      </tr> 
+                      <tr> 
+                          <th> 传感器 </th> 
+                          <td> 霍尔磁感应<br>重力感应<br>红外距离感应<br>陀螺仪<br>环境光度感应<br>触摸感应<br>电子罗盘 </td> 
+                      </tr> 
+                      <tr> 
+                          <th> 导航定位 </th> 
+                          <td> GPS<br>A-GPS<br>GLONASS<br>电子罗盘 </td>
+                      </tr> 
+                      <tr class="standard-table-group"> 
+                          <th colspan="2"> 操作环境 </th> 
+                      </tr> 
+                      <tr> 
+                          <th> 操作环境 </th> 
+                          <td> 工作环境温度&nbsp;-15 至 55°C<br>非工作温度&nbsp;-40 至 70°C<br>相对湿度&nbsp;95%<br>工作高度&nbsp;高达 5000 米 </td> 
+                      </tr> 
+                      <tr class="standard-table-group"> 
+                          <th colspan="2"> 包装清单 </th> 
+                      </tr> 
+                      <tr> 
+                          <th> 包装清单 </th> 
+                          <td> 主机 x 1<br>电源适配器 x 1<br>保修证书 x 1<br>SIM卡顶针 x 1<br>数据线 x 1 </td> 
+                      </tr>                   
+                  </tbody>
+              </table>
+          </div>
+          <div class="question" id="question">
+            <div class="question-list hidden-xs hidden-sm">
+                <h2>热门回答</h2>
+                    <dl class="mod-item">
+                        <dt class="vm-question">
+                        魅蓝 X 的屏幕尺寸是多大？有哪几种颜色？机身材质？
+                        </dt>
+                        <dd class="vm-answer">
+                            5.5 英寸，幻影蓝、流光金、曜石黑、珠光白，双 2.5D 玻璃。
+                        </dd>
+                    </dl>
+                    <dl class="mod-item">
+                        <dt class="vm-question">
+                        魅蓝 X 是否支持指纹识别？
+                        </dt>
+                        <dd class="vm-answer">
+                            支持 mTouch，响应速度达 0.2s，支持移动指纹支付。
+                        </dd>
+                    </dl>
+                    <dl class="mod-item">
+                        <dt class="vm-question">
+                        魅蓝 X 屏幕采用什么技术？
+                        </dt>
+                        <dd class="vm-answer">
+                            夏普 TDDI 屏幕显示触控一体技术，这是迄今为止魅蓝系列最优秀的一块屏幕。
+                        </dd>
+                    </dl>
+                    <dl class="mod-item">
+                        <dt class="vm-question">
+                        魅蓝 X 屏幕对比度和亮度多高？
+                        </dt>
+                        <dd class="vm-answer">
+                            1500:1 对比度丨450cd/m²典型值亮度，500cd/m²峰值亮度。
+                        </dd>
+                    </dl>
+                    <dl class="mod-item">
+                        <dt class="vm-question">
+                        魅蓝 X 支持的网络有哪些？是否具备 VoLTE 语音通话技术？
+                        </dt>
+                        <dd class="vm-answer">
+                            魅蓝 X 全网通版可支持中国移动、中国联通、中国电信三大运营商网络。不可同时支持两张电信卡。支持 VoLTE 高清通话。
+                        </dd>
+                    </dl>
+                    <dl class="mod-item">
+                        <dt class="vm-question">
+                        魅蓝 X 的 CPU 是用什么？
+                        </dt>
+                        <dd class="vm-answer">
+                            全新 Helio P20 16nm 制程低功耗处理器。
+                        </dd>
+                    </dl>
+                    <dl class="mod-item">
+                        <dt class="vm-question">
+                        魅蓝 X 的运行内存是多少？
+                        </dt>
+                        <dd class="vm-answer">
+                            搭载 LPDDR4X 高速低功耗大内存。32G 容量版本配备 3G 运行内存，64G 容量版本配备 4G 运行内存。
+                        </dd>
+                    </dl>
+                    <dl class="mod-item">
+                        <dt class="vm-question">
+                        魅蓝 X 后置摄像头是多少像素？采用哪颗 CMOS？ 
+                        </dt>
+                        <dd class="vm-answer">
+                            1200 万像素，索尼 IMX386 CMOS，搭载 PDAF 高速相位对焦，ƒ/2.0 大光圈虚化。
+                        </dd>
+                    </dl>
+                    <dl class="mod-item">
+                        <dt class="vm-question">
+                        魅蓝 X 的电池规格？是否支持 mCharge 安全快充？是否配备 Type-C 接口？
+                        </dt>
+                        <dd class="vm-answer">
+                            3200 mAh 典型值，支持mCharge，安全快充峰值功率高达 18W，配备 Type-C接口。
+                        </dd>
+                    </dl>
+            </div>
+            <div class="app-question-list">
+                      <dl class="mod-item">
+                          <dt class="vm-question">
+                          魅蓝 X 的屏幕尺寸是多大？有哪几种颜色？机身材质？
+                          </dt>
+                          <dd class="vm-answer">
+                          5.5 英寸，幻影蓝、流光金、曜石黑、珠光白，双 2.5D 玻璃。
+                          </dd>
+                      </dl>
+                      <dl class="mod-item">
+                          <dt class="vm-question">
+                          魅蓝 X 是否支持指纹识别？
+                          </dt>
+                          <dd class="vm-answer">
+                          支持 mTouch，响应速度达 0.2s，支持移动指纹支付。
+                          </dd>
+                      </dl>
+                      <dl class="mod-item">
+                          <dt class="vm-question">
+                          魅蓝 X 屏幕采用什么技术？
+                          </dt>
+                          <dd class="vm-answer">
+                          夏普 TDDI 屏幕显示触控一体技术，这是迄今为止魅蓝系列最优秀的一块屏幕。
+                          </dd>
+                      </dl>
+                      <dl class="mod-item">
+                          <dt class="vm-question">
+                          魅蓝 X 屏幕对比度和亮度多高？
+                          </dt>
+                          <dd class="vm-answer">
+                          1500:1 对比度丨450cd/m²典型值亮度，500cd/m²峰值亮度。
+                          </dd>
+                      </dl>
+                      <dl class="mod-item">
+                          <dt class="vm-question">
+                          魅蓝 X 支持的网络有哪些？是否具备 VoLTE 语音通话技术？
+                          </dt>
+                          <dd class="vm-answer">
+                          魅蓝 X 全网通版可支持中国移动、中国联通、中国电信三大运营商网络。不可同时支持两张电信卡。支持 VoLTE 高清通话。
+                          </dd>
+                      </dl>
+                      <dl class="mod-item">
+                          <dt class="vm-question">
+                          魅蓝 X 的 CPU 是用什么？
+                          </dt>
+                          <dd class="vm-answer">
+                          全新 Helio P20 16nm 制程低功耗处理器。
+                          </dd>
+                      </dl>
+                      <dl class="mod-item">
+                          <dt class="vm-question">
+                          魅蓝 X 的运行内存是多少？
+                          </dt>
+                          <dd class="vm-answer">
+                          搭载 LPDDR4X 高速低功耗大内存。32G 容量版本配备 3G 运行内存，64G 容量版本配备 4G 运行内存。
+                          </dd>
+                      </dl>
+                      <dl class="mod-item">
+                          <dt class="vm-question">
+                          魅蓝 X 后置摄像头是多少像素？采用哪颗 CMOS？ 
+                          </dt>
+                          <dd class="vm-answer">
+                          1200 万像素，索尼 IMX386 CMOS，搭载 PDAF 高速相位对焦，ƒ/2.0 大光圈虚化。
+                          </dd>
+                      </dl>
+                      <dl class="mod-item">
+                          <dt class="vm-question">
+                          魅蓝 X 的电池规格？是否支持 mCharge 安全快充？是否配备 Type-C 接口？
+                          </dt>
+                          <dd class="vm-answer">
+                          3200 mAh 典型值，支持mCharge，安全快充峰值功率高达 18W，配备 Type-C接口。
+                          </dd>
+                      </dl>
+              </div>
+          </div>
+      </div>
+    </div><!-- 产品详情 E-->
+
+  </div>
+{% endblock %}

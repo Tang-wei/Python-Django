@@ -1,0 +1,85 @@
+{% extends 'myweb/member/bases.html' %}
+{%  load static from staticfiles  %}
+
+{% block mainbody %}
+
+
+<div id="content" class="content">  
+    <div class="container-fluid"> 
+    <div class="banner-box hidden-xs hidden-sm">
+      <div class="container">
+        <form id="mainForm" class="main-form"  action="{% url 'denlu1' %}" method="post">
+        {% csrf_token %}
+          <div class="tab-title">
+            <a class="linkAGray" id="toAccountLogin" href="javascript:void(0);">账号登录</a>
+          </div>
+          <div class="tip-box visiblility-hidden">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <i class="glyphicon glyphicon-exclamation-sign"></i>
+              <span class="tip-font"></span>
+              <span aria-hidden="true" class="cha">&times;</span>
+            </button>
+          </div>
+          <div class="normalInput cycode-box fieldInput" id="cycode-box">
+            <div class="cycode-selectbox">
+              <input class="ipt-account inp-focus" name='phone' id="account" maxlength="50" placeholder="手机号" autocomplete="off">
+            </div>
+
+          </div>
+          <div class="normalInput fieldInput passwd-box">
+            <input class="inp-focus" name="password" id="password" maxlength="16" placeholder="密码" autocomplete="off" type="password">
+           </div>
+           <div style="height:40px;width:300px ">
+            验证码：<input type="text" name="code" class="span2" style="width:60px;height:26px;"  />
+            <img src="{% url 'myadmin_verify'%}" onclick="this.src='{% url 'myadmin_verify' %}?sn='+Math.random()" />
+           </div>
+           <button type="submit" class="btn btn-primary" style="width:300px">登录</button>
+          
+          <!-- <a id="register" class="fullBtnBlue">登录</a> -->
+          <div class="transferField">
+            
+            <a class="go2forgetpwd linkABlue rememberFieldForA" href="#">忘记密码?</a>
+            <a class="go2register linkABlue" href="{% url 'zhuce' %}" id="toRegister">注册</a>
+          <div style="">
+            <span style="color:red">{{ info }}</span>
+          </div>  
+          </div>
+          
+        </form>
+      </div>
+    </div>
+      <!-- 移动端结构 -->
+      <form id="mainForm" class="main-form app-main-form">
+        <div class="tab-title">
+          <a class="linkAGray" id="toAccountLogin" href="javascript:void(0);">账号登录</a>
+        </div>
+        <div class="tip-box visiblility-hidden">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <i class="glyphicon glyphicon-exclamation-sign"></i>
+            <span class="tip-font"></span>
+            <span aria-hidden="true" class="cha">&times;</span>
+          </button>
+        </div>
+        <div class="normalInput cycode-box show-cycode" id="cycode-box">
+          <div class="cycode-selectbox">
+            <input id="phone" name="phone" class="ipt-phone inp-focus" maxlength="11" placeholder="手机号码" autocomplete="off">
+          </div>
+        </div>
+        <div class="normalInput box-input">
+          <input class="pswInput inp-focus" name="kapkey" id="kapkey" maxlength="6" placeholder="密码" autocomplete="off" tabindex="3" type="text">
+        </div>
+
+        <a id="register" class="fullBtnBlue">登录</a>
+        <div class="transferField">
+          <a class="go2forgetpwd linkABlue rememberFieldForA" href="#">忘记密码?</a>
+          <a class="go2register linkABlue" href="./register.html" id="toRegister">注册</a>
+        </div>
+        
+      </form>
+      
+      <!-- 移动端结构 E-->
+
+    </div>
+  </div>
+
+{% endblock %}

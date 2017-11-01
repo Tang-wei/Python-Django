@@ -1,0 +1,330 @@
+/*common*/
+i {
+	font-style:normal
+}
+.f-fr {
+	float:right;
+}
+.f-fl {
+	float:left;
+}
+/*面包屑*/
+.crumbs .breadcrumb {
+	background-color: #fff;
+	border-radius: 4px;
+	list-style: outside none none;
+	margin: 0 0 0 30px;
+	padding: 0;
+	line-height:74px;
+}
+.crumbs .breadcrumb > li + li::before{
+	content: ">";
+}
+.crumbs .breadcrumb a{
+	color: #666
+}
+.crumbs .active a{
+    color: #00c3f5;
+}
+/*左侧导航*/
+.main .left-nav {
+	font-size:14px;
+	color:#666;
+	width:15%;
+	min-height:580px
+}
+.main .left-nav .title {
+	margin-left:20px
+}
+.main .left-nav .title a {
+	display:inline-block!important;
+	line-height:14px!important
+}
+.main .left-nav .title a:hover {
+	color:#00c3f5
+}
+.main .left-nav a {
+	display:block;
+	color:#666;
+	text-decoration:none;
+	line-height:34px;
+	width:85px
+}
+.main .left-nav .active {
+	color:#00c3f5!important
+}
+.main .left-nav .type-title {
+	line-height:56px;
+	font-weight:bolder;
+	cursor:default
+}
+.main .left-nav .type-title:hover {
+	color:#666
+}
+.main .left-nav .type-title .iconfont {
+	font-size:17px!important;
+	padding-right:5px
+}
+.main .left-nav .type-title:first-child {
+	line-height:14px;
+	padding:15px 0 20px
+}
+
+.main .nav-main {
+	margin-top:10px;
+	background:#fafafc;
+	padding:0 0 54px 20px
+}
+.glyphicon{
+	font-size: 17px;
+    	padding-right: 5px;
+}
+/*左侧导航 E*/
+
+/*主内容区域*/
+
+.index-main {
+	color:#666;
+	margin-top:29px;
+	width:100%
+}
+.index-main .J_no_data {
+	width:94%;
+	background:url(../img/member/m02.png) center 92px no-repeat;
+	background-size:70%;
+	text-align:center
+}
+.index-main .J_no_data span {
+	display:block;
+	padding-top:33px
+}
+.index-main .information {
+	width:72%;
+	border:1px solid #f3f3f3;
+	border-right:0;
+	padding:28px 3.5%
+}
+.index-main .information img {
+	width:119px;
+	height:119px;
+	padding:5px;
+	border:5px solid #fafafc
+}
+.index-main .information .pic {
+	padding-right:30px
+}
+.index-main .information .name {
+	min-width:170px;
+	max-width:220px;
+	padding-right:30px
+}
+.index-main .information .name span {
+	display:block;
+	color:#999
+}
+.index-main .information .name span:first-child {
+	font-size:20px;
+	color:#666;
+	margin:10px auto
+}
+.index-main .information .info ul {
+	margin-top:5px
+}
+.index-main .information .info ul .emailText span {
+	display:inline-block;
+	padding-left:15px
+}
+.index-main .information .info ul li {
+	color:#999;
+	line-height:32px
+}
+.index-main .information .info ul li span {
+	color:#666;
+	margin-left:10px
+}
+.index-main .information .info a {
+	display:block;
+	margin-top:15px;
+	color:#999;
+	text-decoration:none
+}
+.index-main .information .info a.edit:hover {
+	color:#00c3f5
+}
+.index-main .backCouponNum{
+	width:26%;
+	height:194px;
+	border:1px solid #f3f3f3;
+}
+.index-main .backCouponNum p {
+	margin:40px 0 0 60px
+}
+.index-main .backCouponNum p span {
+	color:#999;
+	margin-left:10px
+}
+.index-main .bottom {
+	width:100%;
+	margin-top:20px
+}
+.index-main .bottom .title {
+	background:#fafafc;
+	line-height:38px;
+	border-bottom:1px solid #f3f3f3
+}
+.index-main .bottom .title span {
+	margin-left:18px
+}
+.index-main .bottom .title .detail {
+	color:#999;
+	margin-right:18px;
+	text-decoration:none
+}
+.index-main .bottom .title .detail:hover {
+	color:#00c3f5
+}
+.index-main .bottom .orderState {
+	width:57%;
+	border:1px solid #f3f3f3;
+	margin-right:2%
+}
+.index-main .bottom .orderState .content {
+	padding:38px 75px
+}
+.index-main .bottom .orderState .content p {
+	font-size:18px
+}
+.index-main .bottom .orderState .content .cercl {
+	width:90px;
+	height:90px;
+	display:block;
+	border-radius:45px
+}
+.index-main .bottom .orderState .content .iconfont {
+	color:#fff;
+	text-align:center;
+	display:block;
+	width:90px;
+	height:90px;
+	line-height:83px;
+	font-size:48px
+}
+.index-main .bottom .orderState .content .text {
+	margin:15px 0 0 35px;
+	line-height:30px
+}
+.index-main .bottom .orderState .content .text .detail {
+	text-decoration:none;
+	color:#999
+}
+.index-main .bottom .orderState .content .text .detail:hover {
+	color:#00c3f5
+}
+.index-main .bottom .orderState .content .waitPay {
+	margin-bottom:30px
+}
+.index-main .bottom .orderState .content .waitPay .cercl {
+	background:#f56313
+}
+.index-main .bottom .orderState .content .waitPay .num {
+	color:#f56313
+}
+.index-main .bottom .orderState .content .waitDeliver .cercl {
+	background:#00c3f5
+}
+.index-main .bottom .orderState .content .waitDeliver .num {
+	color:#00c3f5
+}
+.index-main .bottom .message {
+	width:39%;
+	border:1px solid #f3f3f3
+}
+.index-main .bottom .message .list {
+	margin:50px 15px;
+	height:186px;
+	min-height:186px!important
+}
+.index-main .bottom .message .list ul li:first-child .firstMounth {
+	display:none
+}
+.index-main .bottom .message .list .time {
+	width:18%;
+	margin-right:5%;
+	text-align:right;
+	font-size:12px;
+	display:block
+}
+.index-main .bottom .message .list .time .smallTime {
+	color:#999
+}
+.index-main .bottom .message .list .time .firstMounth {
+	display:block
+}
+.index-main .bottom .message .list .content {
+	width:77%;
+	border-bottom:1px dashed #f3f3f3;
+	padding-bottom:15px
+}
+.index-main .bottom .message .list .content a {
+	text-decoration:none;
+	color:#666;
+	font-size:12px;
+	word-break:break-word
+}
+.index-main .bottom .message .list .content a .detail:hover {
+	color:#00c3f5
+}
+.index-main .bottom .message .list .content a span {
+	color:#999
+}
+.index-main .bottom .message .list li {
+	margin-bottom:12px
+}
+.phone-repo {
+	margin-top:10px
+}
+.phone-repo .flow-item {
+	margin-right:94px
+}
+.phone-repo .flow-item .iconfont {
+	font-size:100px;
+	color:#00c3f5
+}
+.service-items .yh-btn,.service-items .yh-btn-multi,.service-items .yh-btn-single {
+	display:inline-block;
+	border:1px solid #f0415f;
+	border-radius:3px;
+	background:#ffedf0;
+	color:#f0415f;
+	height:22px;
+	line-height:22px;
+	margin:0 auto;
+	font-size:12px;
+	padding:0 18px 0 5px
+}
+.service-items .package-color {
+	color:#00c3f5
+}
+.service-items .yh-btn-single {
+	padding:0 10px!important
+}
+.service-items .yh-wrap {
+	position:relative;
+	display:inline-block
+}
+.service-items .cut-hover .yh-btn-multi {
+	border-color:#f0415f #f0415f transparent;
+	border-radius:3px 3px 0 0
+}
+.right-content {
+	width:83%;
+	display:inline-block
+}
+.right-content hr {
+	margin-top:10px;
+	padding:0;
+	height:1px;
+	border:none;
+	border-top:1px solid #eee
+}
+/*移动端隐藏*/

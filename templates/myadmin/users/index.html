@@ -1,0 +1,83 @@
+{% extends 'myadmin/base.html' %}
+{% block mainbody %}
+	<h1>
+		会员用户信息浏览
+	</h1>
+	<hr>
+	<table class="table table-bordered table-striped">
+		<thead>
+			<tr>
+				<th>
+					帐号
+				</th>
+				<th>
+					真实姓名
+				</th>
+				<th>
+					性别
+				</th>
+				<th>
+					邮箱
+				</th>
+				<th>
+					注册时间
+				</th>
+				<th>
+					状态
+				</th>
+				<th>
+					操作
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for vo in userslist %}
+			<tr>
+				<td>{{ vo.username }}</td>
+				<td>{{ vo.name }}</td>
+				<td>
+					{% if vo.sex == 1 %}
+						男
+					{% else %}
+						女
+					{% endif %}
+				</td>
+				<td>{{ vo.email }}</td>
+				<td>{{ vo.addtime }}</td>
+				<td>
+					{% if vo.state == 0 %}
+						管理员
+					{% elif vo.state == 1 %}
+						禁用会员
+					{% else %}
+						禁用用户
+					{% endif %}
+				</td>
+				<td>
+					<a href="{% url 'myadmin_usersdel' vo.id %}" class="view-link">删除</a>
+                    <a href="{% url 'myadmin_usersedit' vo.id %}" class="view-link">编辑</a>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>				
+	<div class="pagination">
+		<ul>
+			<li class="disabled">
+				<a href="#">&laquo;</a>
+			</li>
+			<li>
+				<a href="#">1</a>
+			</li>
+			<li>
+				<a href="#">2</a>
+			</li>
+			{%for pindex in plist%}
+            <li><a href="{% url 'users' pindex %}">{{pindex}}</a></li>
+            {% endfor %}
+			<li>
+				<a href="#">&raquo;</a>
+			</li>
+		</ul>
+	</div>
+{% endblock %}
